@@ -1,15 +1,10 @@
-pipeline{
-agent any
-
-stages{
-
-stage('Build'){
-steps{
-
-echo 'Hello'
-}
-
-}
-}
+Node {
+  stage('Do Something with git'){
+    sshagent(credentials: ['key_for_my_repos'])  {
+      
+      sh 'git ls-remote-h --refs git@github.com/srivatsanv1991/testApplication.git master |awk "{print $1}"'
+    }
+    
+  }
 
 }
