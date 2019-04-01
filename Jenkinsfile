@@ -1,4 +1,4 @@
-Node {
+node {
   stage('Do Something with git'){
     sshagent(credentials: ['key_for_my_repos'])  {
       
