@@ -3,7 +3,7 @@ pipeline {
   stages{
   stage('Do Something with git'){
     steps{
-    sshagent(credentials: ['key_for_my_repos'])  {
+    sshagent(credentials: ['mygithubkey'])  {
       
       sh 'git status'
     }
